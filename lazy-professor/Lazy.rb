@@ -11,7 +11,8 @@ class Lazy
     lazy.sample.map! { |line| line[0..-2] } # clean EOL
 
     lazy.load_answers
-    lazy.parse_sample_for_answer
+    lazy.calculate_occurrences
+    lazy.detect_highest_occurrences
   end
 
   def load_answers
@@ -21,21 +22,19 @@ class Lazy
     longest_length.times { @answers << counter.clone }
   end
 
-  def parse_sample_for_answer
+  def calculate_occurrences
     sample.each do |line|
       line.chars.each_with_index do |char, index|
         answers[index][char] += 1
       end
     end
-
-    detect_highest_occurances
   end
 
-  def detect_highest_occurances
+  def detect_highest_occurrences
     final = ''
 
     answers.each do |ans|
-      final << ans.sort_by { |_, occurances| occurances }.reverse[0][0]
+      final << ans.sort_by { |_, occurrences| occurrences }.reverse[0][0]
     end
     final
   end

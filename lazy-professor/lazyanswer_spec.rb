@@ -1,4 +1,4 @@
-require './Lazy.rb'
+require './lazy.rb'
 
 RSpec.describe Lazy do
   it "has a class method 'answer'" do
@@ -9,10 +9,10 @@ RSpec.describe Lazy do
     expect{Lazy.answer(1,2)}.to raise_error(ArgumentError)
   end
   it "confirms that parameter is an existing file" do
-    expect{Lazy.answer('test')}.to raise_error(RuntimeError)
+    expect{Lazy.answer('file_not_found')}.to raise_error(RuntimeError)
   end
   it "passes back a string" do
-    expect(Lazy.answer('test.txt').class).to eq(String)
+    expect(Lazy.answer('small_sample.txt').class).to eq(String)
   end
   it "correctly identifies the most common answers" do
     expect( Lazy.answer('small_sample.txt')).to eq('ABC')

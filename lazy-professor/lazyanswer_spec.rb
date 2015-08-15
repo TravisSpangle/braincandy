@@ -11,9 +11,6 @@ RSpec.describe Lazy do
   it "confirms that parameter is an existing file" do
     expect{Lazy.answer('test')}.to raise_error
   end
-  it "loads the answer sheet into an array of hashes" do
-    expect(Lazy.answer('test.txt').sample.class).to eq(Array)
-  end
   it "passes back a string" do
     expect(Lazy.answer('test.txt').class).to eq(String)
   end

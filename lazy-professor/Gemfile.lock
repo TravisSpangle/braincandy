@@ -15,9 +15,14 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    watchr (0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   rspec
+  watchr
+
+BUNDLED WITH
+   1.10.5

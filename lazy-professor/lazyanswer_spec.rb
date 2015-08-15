@@ -9,7 +9,7 @@ RSpec.describe Lazy do
     expect{Lazy.answer(1,2)}.to raise_error(ArgumentError)
   end
   it "confirms that parameter is an existing file" do
-    expect{Lazy.answer('test')}.to raise_error
+    expect{Lazy.answer('test')}.to raise_error(RuntimeError)
   end
   it "passes back a string" do
     expect(Lazy.answer('test.txt').class).to eq(String)

@@ -15,7 +15,6 @@ RSpec.describe Lazy do
     expect(Lazy.answer('test.txt').class).to eq(String)
   end
   it "correctly identifies the most common answers" do
-    test_data = [%w{ABC},%w{ABC},%w{BCA}]
-    expect( Lazy.test_answer(test_data)).to eq('ABC')
+    expect( Lazy.test_answer('small_sample.txt')).to eq('ABC')
   end
 end

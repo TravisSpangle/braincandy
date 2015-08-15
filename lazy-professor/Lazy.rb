@@ -11,13 +11,6 @@ class Lazy
     lazy.parse_sample_for_answer
   end
 
-  def self.test_answer(sample_data)
-    lazy = Lazy.new
-    
-    lazy.sample = sample_data
-    lazy.parse_sample_for_answer
-  end
-
   def load_answers
     @answers = Array.new( sample.length, Hash.new{ |hash,key| hash[key] = 0 } )
   end

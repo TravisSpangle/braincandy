@@ -5,11 +5,11 @@ RSpec.describe Lazy do
     expect(Lazy.methods.include?(:answer)).to be_truthy
   end
   it "only takes one parameter" do
-    expect(Lazy.answer).to raise_error(ArgumentError)
-    expect(Lazy.answer(1,2)).to raise_error(ArgumentError)
+    expect{Lazy.answer}.to raise_error(ArgumentError)
+    expect{Lazy.answer(1,2)}.to raise_error(ArgumentError)
   end
   it "confirms that parameter is an existing file" do
-    expect(Lazy.answer('test')).to raise_error
+    expect{Lazy.answer('test')}.to raise_error
   end
   it "loads the answer sheet into an array of hashes" do
     expect(Lazy.answer('test.txt').sample.class).to eq(Array)

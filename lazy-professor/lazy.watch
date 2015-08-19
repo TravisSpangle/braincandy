@@ -1,1 +1,1 @@
-watch( 'lazy.rb' )  {|file| system("clear; rspec lazyanswer_spec.rb --color" )}
+watch( 'lazy.rb' )  {|file| system("clear; rubocop lazy.rb; rspec lazyanswer_spec.rb --color" )}
